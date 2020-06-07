@@ -1,3 +1,4 @@
+#If You Wanna Take Credits For This Code, Please Look Yourself Again
 #code by shuhaibXro0
 #we are not responsible for any risk on your device
 
