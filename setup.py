@@ -1,7 +1,7 @@
-#If You Wanna Take Credits For This Code, Please Look Yourself Again
-#code by shuhaibXro0
+#coded by shuhaibXro0
 #we are not responsible for any risk on your device
 
+from banner import banner
 import math
 import random
 
@@ -12,27 +12,28 @@ except ImportError:
     print('Type \'pip install -r requirements.txt\' to install all required packages')
     exit()
 
-colors=['\033[1;31m','\033[1;32m','\033[1;33m','\033[1;34m','\033[1;35m','\033[1;36m']
-w='\033[0m'
+def detail():
+    print('''
+#coded by shuhaibXro0
+#we are not responsible for any risk on your device''')
 
-def banner():
-    
-    logo="""                                                  
-          ##            ##  #####  #####
-           ##    ##    ##   #      #    #
-            ##  ####  ##    #####  #####
-             ####  ####     #      #    #
-              ##    ##      #####  #####
-           
-                                    -ShuhaibXro0 """
-    print(random.choice(colors)+logo+w)
-    print("\n")
-
-
-print(banner())
-x = str(input('Enter website url:'))
-if(x==""):
-    print('[!] Error: URL Required')
-else:
+def func(x):
+    print('Requesting ',x,'...')
+    print('Collecting data...')
     x = requests.get(x)
     print(x.text)
+    print('Done.')
+
+banner()
+x = str(input('Enter website url:'))
+
+if(x==""):
+    print('[!] Error: URL not specified')
+    exit()
+    
+y = input('do you want to continue? (y/n):')
+
+if y == 'y':
+    func(x)
+elif y == 'n':
+    detail()
